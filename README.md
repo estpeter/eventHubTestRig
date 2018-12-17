@@ -1,2 +1,2 @@
 # eventHubTestRig
-User interface for sending events to Azure Event Hub.
+User interface for sending events to Azure Event Hub for QA testing.
