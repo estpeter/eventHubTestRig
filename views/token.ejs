@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SASTokenGenerator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/uikit/css/uikit.min.css" />
+        <script src="/uikit/js/uikit.min.js"></script>
+        <script src="/uikit/js/uikit-icons.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div>
+             <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-left">
+            
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="/">Generate SAS Token</a></li>
+                        <!--<li><a href="/"</a>POST Message</a></li>-->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="uk-child-width-1-2@s uk-grid-match uk-margin uk-margin-auto" uk-grid>
+             <div class="uk-card uk-card-default uk-card-body uk-align-center">
+                <form action="/event" method="POST">
+                    <fieldset class="uk-fieldset">
+                        <H3 class="uk-heading-bullet">Enter Event Hub Details</H3>
+                        <div align="center" class="uk-margin">
+                            <input class="uk-input uk-width-2-3" type="text" name="eventHubRequestEventHubName" placeholder="Event Hub Namespace" value="<%=newRequest.eventHubName%>" required>
+                        </div>
+                         <div align="center" class="uk-margin">
+                            <input class="uk-input uk-width-2-3" type="text" placeholder="Event Hub Primary Key" name="eventHubRequestPrimaryKey" value="<%=newRequest.primaryKey%>" required>
+                        </div>
+                         <div align="center" class="uk-margin">
+                            <input class="uk-input uk-width-2-3" type="text" placeholder="Event Hub Policy Name e.g RootManageSharedAccessKey" name="eventHubRequestPolicyName" value="<%=newRequest.policyName%>" required>
+                        </div>
+                         <div align="center" class="uk-margin">
+                            <input class="uk-input uk-width-2-3" type="text" placeholder="Token Expiration in Minutes" name="eventHubRequestTokenExpiration" value="<%=newRequest.tokenExpirationMin%>" required>
+                        </div> 
+                        <H3 class="uk-heading-bullet">SAS Token</H3>
+                        <div align="center" class="uk-margin">
+                            <textarea placeholder="SAS Token" class="uk-textarea uk-width-2-3" rows="5" name="SASToken"><%=SASToken%></textarea>
+                        </div>
+                        <H3 class="uk-heading-bullet">Event Hub Request</H3>
+                        <div align="center" class="uk-margin">
+                            <textarea placeholder="Event Body" class="uk-textarea uk-width-2-3" rows="10" name="eventHubRequestBody"></textarea>
+                        </div> 
+                        <div align="center" class= "uk-margin">
+                             <button class="uk-button-large uk-button-primary uk-width-1-2">Send Event</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
