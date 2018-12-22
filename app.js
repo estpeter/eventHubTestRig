@@ -118,5 +118,5 @@ app.post("/event", function(req, res){
 });
 
 app.listen(process.env.PORT, process.env.IP, function(){
-  console.log("Server started v3" + process.env.PORT);
+  console.log("Server started on Port " + process.env.PORT);
 });
